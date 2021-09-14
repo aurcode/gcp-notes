@@ -75,3 +75,21 @@ Desde la CLI podemos crear nuestra instancia ocupando la herramienta `cbt`, la e
 * `us-east1-c` es la región
 * `1` es el numero de nodos
 * `SSD` es el tipo de disco
+
+## Cloud SQL
+Este es el servicio administrado de Bases de Datos Relacionales. Puede ser MySQL, PosgreSQL y SLQ Server.
+
+En caso de necesitar mayor rendimiento se puede escalar de forma vertical (un máquina más potente).
+Si se requiere más disponibilidad se puede optar por una arquitectura en dos zonas.
+
+### Características claves
+Totalmente administrada
+Una solución integrada: Se puede acceder a ellas desde cualquier lado.
+Confiable: ES fácil configurar las replicas, copias de seguridad y activar el proceso de Failover (reemplazar una instancia cuando esta falla).
+Migraciones sencillas a CloudSQL: Database Migration Service ayuda a migrar las DB on premise a la Nube facilmente.
+En este tipo de Bases de datos realizamos transacciones y deben cumplir los principios ACID.
+
+* Atomicity: Asegura que todas las operaciones que una transaccion se realicen, y en caso contrario que sea posible regresar al estado anterior (rollback).
+* Consistency: Asegura que todas las transacciones se realicen con exito, los datos deben tener sentido.
+* Isolation: Dicta que las operaciones sean aisladas y transparentes, es decir, multiples operaciones ocurren de forma independiente y sin afectarse.
+* Durabilty: Nos asegura que el resultado de una operación permanezca incluso cuando hubo un error.
