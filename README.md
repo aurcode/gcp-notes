@@ -61,3 +61,16 @@ Google Search, Maps y otros productos de Google
 Api de aplicación: Podemos leer y escribir datos atraves de una capa de servicio llamada rede Hbase, que es un gestor de codigo abierto que nos ayuda exponer el point que nos proveen estas operaciones de escribir leer actualizar y borrar y esto se usa normalmente para enviar datos a las aplicaciones o paneles de control
 Streaming / Transmisión: Datflow Streaming, Saprk Streaming y Apache Storm
 Batch Processing / Procesamiento por lotes: Los datos se pueden leer y escribir en Big Table en forma de batch (cantidades grandes) esto se puede hacer a través de hadoop, Datflow, Apache Spark.
+
+### Google Cloud Bigtable en acción
+En esta clase creamos una instancia de Bigtable con el nombre quick-start-instance, id quick-start-instance y cluster id quickstart-instance-c1. El tipo de disco fue SSD con un solo nodo. Finalmente la región fue us-east1 y la zona us-east1-c.
+
+Desde la CLI podemos crear nuestra instancia ocupando la herramienta cbt, la el comando para crear la instancia de esta clase quedaría así:
+
+cbt createinstance quick-start-instance "quick-start-instance" quickstart-instance-c1 us-east1-c 1 SSD
+quick-start-instance es el id
+"quick-start-instance" es el nombre
+quickstart-instance-c1 es el id del cluster
+us-east1-c es la región
+1 es el numero de nodos
+SSD es el tipo de disco
