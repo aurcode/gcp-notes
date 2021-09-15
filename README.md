@@ -123,3 +123,10 @@ Algunos casos de uso pueden ser:
 - Inventarios en tiempo real
 - Cambios de estados
 - Sincronización de datos
+
+### Firestore en acción
+En esta clase creamos una instancia de Firestore en Native Mode, ubicada en us-east4.
+
+Ocupando el siguiente comando podemos crear una base de datos Google Cloud Firestore Native:
+
+gcloud firestore databases create --region=us-east4	
