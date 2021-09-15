@@ -93,3 +93,33 @@ En este tipo de Bases de datos realizamos transacciones y deben cumplir los prin
 * Consistency: Asegura que todas las transacciones se realicen con exito, los datos deben tener sentido.
 * Isolation: Dicta que las operaciones sean aisladas y transparentes, es decir, multiples operaciones ocurren de forma independiente y sin afectarse.
 * Durabilty: Nos asegura que el resultado de una operación permanezca incluso cuando hubo un error.
+
+
+## Firestore
+
+BigTable es una Base de Datos NoSQL de tipo Llave-Valor (key-value), mientras que Cloud Firestore es una Base de Datos NoSQL de documentos
+
+**Documento **= Conjunto de datos asociados a un mismo concepto
+Ejemplo: Producto, Nota, Jugador.
+
+Colección: Conjunto de documentos.
+Cloud Firestore:
+
+- Serverless
+- Tiempo Real
+- Soporte Offline
+
+### Características:
+
+- Escalable
+- Confiable
+- Flexible
+- Disponible
+- Transaccional
+
+Algunos casos de uso pueden ser:
+
+- Gestión de perfiles de usuario
+- Inventarios en tiempo real
+- Cambios de estados
+- Sincronización de datos
