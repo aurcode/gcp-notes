@@ -1,5 +1,8 @@
 # gcp-notes
 
+## Resumen:
+![image](./Resumen-almacenamiento.webp)
+
 ## gsutil Bucket
 Se sugiere ponerle al Bucket que este asociado con el proyecto, para que sea fácil de ubicar. El nombre del Bucket debe ser único.
 
