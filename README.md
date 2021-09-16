@@ -97,6 +97,65 @@ En este tipo de Bases de datos realizamos transacciones y deben cumplir los prin
 * Isolation: Dicta que las operaciones sean aisladas y transparentes, es decir, multiples operaciones ocurren de forma independiente y sin afectarse.
 * Durabilty: Nos asegura que el resultado de una operación permanezca incluso cuando hubo un error.
 
+## Cloud Spanner
+
+Base de datos de nivel empresarial, distribuido fuertemente consistente y de forma global, estructura relacional a escala horizontal no relacional.
+
+### Cloud Spanner Características.
+* Base de datos relacional diseñada para cualquier escala
+* Disponibilidad cinco 9 (99,999%)
+* Fragmentación automática.
+
+### Cloud Spanner en acción
+#### Crear instancia desde gcloud CLI
+En esta clase creamos una instancia Cloud Spanner con nombre example-db, regional y en US central. Además de que ocupamos solo 1 nodo.
+
+Para crear dicha instancia usando gcloud usamos el siguiente comando:
+
+`gcloud spanner instances create example-db --config=regional-us-central1 --nodes=1`
+
+#### Crear base de datos desde gcloud CLI
+Para crear una base de datos llamada example-db-db en nuestra instancia example-db usamos el comando:
+
+`gcloud spanner databases create example-db-db --instance=example-db`
+
+#### Crear un schema con gcloud CLI
+`gcloud spanner databases ddl update example-db-db \
+--instance=example-db \ 
+		--ddl='CREATE TABLE Singers ( 
+				SingerId INT64 NOTNULL, 
+				FirstName STRING(1024), 
+				LastName STRING(1024), 
+				SingerInfo BYTES(MAX) 
+				) PRIMARY KEY (SingerId)'`
+
+#### Insertar datos a nuestra DB con gcloud CLI
+Para insertan un solo registro:
+
+`gcloud spanner rowsinsert--database=example-db-db \  
+--instance=example-db \
+--table=Singers \  
+--data=SingerId=1,FirstName=Marc,LastName=Richards`
+
+#### Actualizar datos en nuestra DB con gcloud CLI
+Para actualizar un solo registro:
+
+`gcloud spanner rows update --table=Singers --database=example-db-db --instance=example-db \ 
+--data=SingerId=1,SingerName=Will`
+
+#### Eliminar datos en nuestra DB con gcloud CLI
+Para eliminar un solo registro:
+
+`gcloud spanner rowsdelete--table=Singers --database=example-db-db \ 
+--instance=example-db --keys=1`
+
+#### Leer los datos mediante SQL
+Para consultar nuestros registros:
+
+`gcloud spanner databases execute-sql example-db-db \ 
+--instance=example-db \
+--sql='SELECT * FROM Singers'`
+
 
 ## Firestore
 
